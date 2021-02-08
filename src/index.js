@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const postRouter = require("../src/routers/blogPostRouter")
 const adminRouter = require("../src/routers/adminRouter")
+const port = 8080
 
 
 const app = express()
@@ -27,6 +28,6 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || port, () => {
     console.log("server started")
 })
